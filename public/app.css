@@ -1,0 +1,418 @@
+body{
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+}
+.body{
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+}
+#container{
+   display: table-cell;
+   height: 290px;
+   padding: 90px 30px 3px 30px;
+   border-radius: 10px;
+   background-color: #009688;
+   box-sizing: border-box;
+   border: groove;
+}
+
+.keys{
+   position: relative;
+   top: -95%;
+}
+
+
+
+/*-------------------Button 2<White-keys>-----------------------*/
+.white-keys{
+    display: flex;
+}
+.btn-3d{
+    
+    background-color: white;
+    border: none;
+    color: #000;
+    padding: 15px 24px;
+    font-size: 1.4rem;
+    box-shadow: -6px 6px 0 hsl(200deg 14% 34%);
+    outline: none;
+    height: 280px;
+    width: 68px;
+    box-sizing: border-box;
+
+}
+
+.btn-3d:hover{
+background: hsl(16deg 12% 87%);
+}
+
+.btn-3d:active{
+    background: hsl(16deg 5% 78%);
+   top: 3px;
+   left: -3px;
+   box-shadow: -3px 3px 0 hsl(16deg 1% 41%);
+   
+}
+.btn-3d.active{
+    background: hsl(16deg 5% 78%);
+   top: 3px;
+   left: -3px;
+   box-shadow: -3px 3px 0 hsl(16deg 1% 41%);
+   
+}
+.btn-3d:active::before{
+    
+   border: solid 3px transparent;
+   border-right: solid 3px hsl(16deg 1% 41%);
+   left: -3px;
+   border-left-width: 0;
+}
+
+.btn-3d.active::before{
+    
+    border: solid 3px transparent;
+    border-right: solid 3px hsl(16deg 1% 41%);
+    left: -3px;
+    border-left-width: 0;
+ }
+.btn-3d:active::after{
+    
+    border: solid 3px transparent;
+    border-top: solid 3px hsl(16deg 1% 41%);
+    bottom: -3px;
+    border-bottom-width: 0;
+ }
+ .btn-3d.active::after{
+    
+    border: solid 3px transparent;
+    border-top: solid 3px hsl(16deg 1% 41%);
+    bottom: -3px;
+    border-bottom-width: 0;
+ }
+ 
+
+.btn-3d::before{
+   position: absolute;
+   display: block;
+   content: "";
+   height: 0;
+   width: 0;
+
+   border: solid 6px transparent;
+   border-right: solid 6px hsl(200deg 14% 34%);
+   border-left-width: 0;
+   top: 0;
+   left: -6px;
+
+}
+
+.btn-3d::after{
+   position: absolute;
+   display: block;
+   content: "";
+   height: 0;
+   width: 0;
+
+   border: solid 6px transparent;
+   border-top: solid 6px hsl(200deg 14% 34%);
+   border-bottom: 0;
+   right: 0;
+   bottom: -6px;
+   
+}
+
+/*-------------------Button 2<Black-keys>-----------------------*/
+.black-keys{
+    display: flex;
+    position: relative;
+  }
+
+.btn-2d{
+    position: absolute;
+    background-color: #201d1d ;
+    border: none;
+    color: #fff;
+    padding: 15px 24px;
+    font-size: 1.4rem;
+    box-shadow: -6px 6px 0 hsl(16deg 4% 10%);
+    outline: none;
+    height: 160px;
+    width: 38px;
+}
+
+.btn-2d:hover{
+background: hsl(16deg 15% 3%);
+}
+
+.btn-2d:active{
+   background: hsl(0deg 0% 0%);
+   top: 3px;
+   left: -3px;
+   box-shadow: -3px 3px 0 hsl(0deg 0% 22%);
+   
+}
+
+.btn-2d.active{
+    background: hsl(0deg 0% 0%);
+    top: 3px;
+    left: -3px;
+    box-shadow: -3px 3px 0 hsl(0deg 0% 22%);
+    
+ }
+
+.btn-2d:active::before{
+    
+   border: solid 3px transparent;
+   border-right: solid 3px hsl(0deg 0% 22%);
+   left: -3px;
+   border-left-width: 0;
+}
+
+.btn-2d.active::before{
+    
+    border: solid 3px transparent;
+    border-right: solid 3px hsl(0deg 0% 22%);
+    left: -3px;
+    border-left-width: 0;
+ }
+.btn-2d:active::after{
+    
+    border: solid 3px transparent;
+    border-top: solid 3px hsl(0deg 0% 22%);
+    bottom: -3px;
+    border-bottom-width: 0;
+ }
+ 
+.btn-2d.active::after{
+    
+    border: solid 3px transparent;
+    border-top: solid 3px hsl(0deg 0% 22%);
+    bottom: -3px;
+    border-bottom-width: 0;
+ }
+
+.btn-2d::before{
+   position: absolute;
+   display: block;
+   content: "";
+   height: 0;
+   width: 0;
+
+   border: solid 6px transparent;
+   border-right:  solid 6px hsl(16deg 4% 10%);
+   border-left-width: 0;
+   top: 0;
+   left: -6px;
+
+}
+
+.btn-2d::after{
+   position: absolute;
+   display: block;
+   content: "";
+   height: 0;
+   width: 0;
+   border: solid 6px transparent;
+   border-top: solid 6px hsl(16deg 4% 10%);
+   border-bottom: 0;
+   right: 0;
+   bottom: -6px;
+   
+}
+
+.btn-2d:nth-child(1){
+    left: 48px;
+}
+
+.btn-2d:nth-child(2){
+    left: 117px;
+}
+
+.btn-2d:nth-child(3){
+    left: 253px;
+}
+
+.btn-2d:nth-child(4){
+    left: 320px;
+}
+
+.btn-2d:nth-child(5){
+    left: 389px;
+}
+
+.btn-2d:nth-child(6){
+    left: 525px;
+}
+
+.btn-2d:nth-child(7){
+    left: 594px;
+}
+
+.btn-2d:nth-child(8){
+    left: 662px;
+}
+
+.btn-2d:nth-child(9){
+    left: 797px;
+}
+
+.btn-2d:nth-child(10){
+    left: 865px;
+}
+
+
+/* ---------frog------------ */
+.contain{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* background: brown; */
+    width: 100%;
+    height: 26%;
+    position: fixed;
+
+}
+
+.treehouse-frog {
+    width: 25%;
+    height: 40px;
+    padding-top: 15%;
+    border-radius: 50%;
+    background: #92ae57;
+    position: relative;
+    top: -104%;
+    left: 40%;
+}
+.treehouse-frog [class*=eye] {
+    background: #ffe13b;
+    border: 10px solid #92ae57;
+    width: 45.45%;
+    height: 68.18%;
+    position: absolute;
+    top: -18.18%;
+    left: -4.54%;
+    border-radius: 50%;
+}
+.treehouse-frog .right-eye {
+    left: auto;
+    right: -4.54%;
+}
+
+
+.dot{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 38%;
+    border-radius: 50%;
+    margin-left: -17.2%;
+    margin-top: -19%;
+    background: black;
+}
+
+.treehouse-frog:before,
+.treehouse-frog:after {
+    content: "";
+    position: absolute;
+    top: 56.81%;
+    background: #6f8346;
+    border-radius: 50%;
+    left: 43.93%;
+    width: 6%;
+    height: 10%;
+    z-index: 1;
+}
+.treehouse-frog:after {
+    left: 52.12%;
+}
+.treehouse-frog .mouth {
+    position: absolute;
+    top: 60%;
+    left: 1.7%;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+
+
+
+.treehouse-frog .mouth:after,
+.treehouse-frog .mouth:before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 0%;
+    width: 97%;
+    height: 100%;
+    border-radius: 50%;
+    background: #71803f;
+}
+
+.mouth.activee::after,
+.mouth.activee::before {
+    content: "";
+    position: absolute;
+    top: -45%;
+    left: 0%;
+    width: 97%;
+    height: 110%;
+    border-radius: 50%;
+    transition-duration: 2s;
+    background: #ad5757;
+}
+
+.treehouse-frog .mouth:after {
+    background: #92ae57;
+    height: 80%;
+    top: -40%;
+    left: 0%;
+}
+
+.circle1{
+    top: 0;
+    border-radius: 50%;
+    width: 2%;
+    background: #f44336;
+    height: 12%;
+    position: relative;
+    top: -133%;
+
+}
+.circle2{
+    top: 0;
+    border-radius: 50%;
+    width: 2%;
+    background: #0fbd0f;
+    height: 12%;
+    position: relative;
+    top: -133%;
+
+}
+.comments{
+    text-align: center;
+    color: antiquewhite;
+    font-family: cursive;
+
+}
+
+.letter{
+    top: 0;
+    width: 10%;
+    /* background: #430fbd; */
+    height: 30%;
+    position: relative;
+    top: -133%;
+    margin-bottom: -3%;
+    left: 15%;
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="../style.css">
+    <script type="text/javascript" src="../sounds/paper-full.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/1.1.28/howler.js"></script>
+
+    <title>Piano</title>
+</head>
+<body>
+ 
+  <div class="comments">
+    <h1>Frog Piano</h1>
+    <div class="commentsContainer">
+    <h1>Comments</h1>
+    <ul>
+        <% for (let c of comments) {%>
+        <li class="comment">
+            <%= c.comment %> - <b style="color: #ffd400 ;text-transform: uppercase;"><%= c.username %> </b>
+            <a class="detail" href="comments/<%= c.id %>">details</a>
+        </li>     
+            
+        <% } %>  
+    </ul>
+    <a class="newcomment" href="comments/new">New Comment</a>
+  </div>
+  </div>
+	<canvas id="myCanvas" resize style="position: absolute; width: 100%; height: 100%;"></canvas>
+  
+
+ 
+  <div class="body">
+    
+    
+<div id="container">
+    <div class="treehouse-frog">
+        <div class="left-eye "><div class="dot"></div></div>
+        <div class="right-eye "><div class="dot"></div></div>
+        <div class="mouth"></div>
+    </div>
+  
+  <button class="circle1"></button>
+  <button class="circle2"></button>
+  <div class="letter"></div>
+  
+  
+  <div class="keys">
+        <div class="black-keys">
+            <button class="key btn-2d">1</button>
+            <button class="key btn-2d">2</button>
+            <button class="key btn-2d">3</button>
+            <button class="key btn-2d">4</button>
+            <button class="key btn-2d">5</button>
+            <button class="key btn-2d">6</button>
+            <button class="key btn-2d">7</button>
+            <button class="key btn-2d">8</button>
+            <button class="key btn-2d">9</button>
+            <button class="key btn-2d">0</button>
+          
+        </div>
+        
+        <div class="white-keys">
+            <button class="key btn-3d">Q</button>
+            <button class="key btn-3d">W</button>
+            <button class="key btn-3d">E</button>
+            <button class="key btn-3d">R</button>
+            <button class="key btn-3d">T</button>
+            <button class="key btn-3d">Y</button>
+            <button class="key btn-3d">U</button>
+            <button class="key btn-3d">I</button>
+            <button class="key btn-3d">O</button>
+            <button class="key btn-3d">P</button>
+            <button class="key btn-3d">A</button>
+            <button class="key btn-3d">S</button>
+            <button class="key btn-3d">D</button>
+            <button class="key btn-3d">F</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+  <script src="../app.js"></script>
+
+
+  <script type="text/paperscript" canvas="myCanvas">
+    var keyData = {
+        g: {
+            sound: new Howl({
+              urls: ['/sounds/sound/pinwheel.mp3']
+            }),
+            color: '#f1c40f'
+        },
+        h: {
+            sound: new Howl({
+              urls: ['/sounds/sound/piston-1.mp3']
+            }),
+            color: '#e67e22'
+        },
+       
+        j: {
+            sound: new Howl({
+              urls: ['/sounds/sound/prism-1.mp3']
+            }),
+            color: '#95a5a6'
+        },
+        k: {
+            sound: new Howl({
+              urls: ['/sounds/sound/prism-2.mp3']
+            }),
+            color: '#f39c12'
+        },
+        l: {
+            sound: new Howl({
+              urls: ['/sounds/sound/prism-3.mp3']
+            }),
+            color: '#d35400'
+        },
+       
+        z: {
+            sound: new Howl({
+              urls: ['/sounds/sound/squiggle.mp3']
+            }),
+            color: '#2ecc71'
+        },
+        x: {
+            sound: new Howl({
+              urls: ['/sounds/sound/strike.mp3']
+            }),
+            color: '#3498db'
+        },
+        c: {
+            sound: new Howl({
+              urls: ['/sounds/sound/suspension.mp3']
+            }),
+            color: '#9b59b6'
+        },
+        v: {
+            sound: new Howl({
+              urls: ['/sounds/sound/timer.mp3']
+            }),
+            color: '#34495e'
+        },
+        b: {
+            sound: new Howl({
+              urls: ['/sounds/sound/ufo.mp3']
+            }),
+            color: '#16a085'
+        },
+        n: {
+            sound: new Howl({
+              urls: ['/sounds/sound/veil.mp3']
+            }),
+            color: '#27ae60'
+        },
+        m: {
+            sound: new Howl({
+              urls: ['/sounds/sound/wipe.mp3']
+            }),
+            color: '#2980b9'
+        },
+     
+      
+    }
+
+    var circles = [];
+
+    function onKeyDown(event) {
+        if(keyData[event.key]){
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randomPoint = Point.random();
+            var point = maxPoint * randomPoint;
+            var newCircle = new Path.Circle(point, 500)
+            newCircle.fillColor = keyData[event.key].color;
+            keyData[event.key].sound.play();
+            circles.push(newCircle);
+        }
+    }
+
+    function onFrame(event){
+  for(var i = 0; i < circles.length; i++){
+    circles[i].scale(0.9);
+    circles[i].fillColor.hue += 1;
+    if(circles[i].area < 1){
+        circles[i].remove();
+      circles.splice(i, 1);
+      console.log(circles);
+    }
+  }
+}
+</script>
+</body>
+</html>

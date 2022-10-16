@@ -1,0 +1,96 @@
+body{
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color:antiquewhite;
+    font-family: cursive;
+
+}
+.bo{
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+  
+}
+.commentsContainer{
+    text-align: initial;
+    align-items: center;
+    margin-left: 3%;
+    
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 5px outset #0095ff;
+    max-width: fit-content;
+}
+.comment{
+    border-radius: 10%;
+    margin: 3px;
+    padding: 0.3%;
+    background: #3a8d6a;
+    height: 40px;
+    line-height: 40px;
+    width: auto;
+}
+
+li:nth-child(2n){
+	background: #3a768d;
+    display: flex;
+
+}
+.detail{
+    padding: 2px 5px 3px 5px;;
+    text-transform: uppercase;
+    text-decoration-style: wavy;
+    color: darkred;
+}
+.newcomment{
+    color: #ffc41e;
+    font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
+    margin-left: 15%;
+    text-decoration-style: wavy;
+    display: inline-grid;
+    margin: 11px 0px 0px 20%;
+}
+.form{
+text-align: center;
+border: 4px solid #fd86af;
+    width: fit-content;
+    margin-left: 40%;
+    padding: 13px;
+
+
+}
+.username{
+ display: grid;
+ margin-bottom: -13px;
+ margin-top: 20px;
+    text-transform: uppercase;
+}
+.inputcomment{
+    border: 3px groove #fd86af;
+}
+.ncomment{
+    color: #ffc41e;
+    font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
+    text-decoration-style: wavy;
+   
+}
+.button{
+    border-style: none;
+    background-color: #000;
+    color: #36c91c;
+    font-weight: bold;
+    font-family: cursive;
+    font-size: large;
+    border: 2px solid;
+    text-transform: uppercase;
+    text-decoration-style: wavy;
+}
